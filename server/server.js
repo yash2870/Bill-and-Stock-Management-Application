@@ -18,7 +18,10 @@ dotenv.config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: 'https://bill-sahayak.onrender.com', // Add your frontend's URL
+    credentials: true,
+}));
 app.use(bodyParser.json());
 
 // Database connection
