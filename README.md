@@ -1,5 +1,5 @@
 
-# Bill Sahayak
+# Billing and Stock Management Application: Bill Sahayak
 
 Bill Sahayak is an all-in-one solution for seamless billing and stock management. This platform streamlines inventory control, billing processes, and ensures accurate calculations with minimal effort. With user authentication and an intuitive interface, Bill Sahayak is perfect for businesses of all sizes.
 
