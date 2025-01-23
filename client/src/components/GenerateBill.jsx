@@ -40,7 +40,7 @@ const GenerateBill = () => {
   // Fetch all bills
   const fetchBills = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/bills/view-bills", {
+      const response = await axios.get("https://bill-and-stock-management-application.onrender.com/api/bills/view-bills", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -61,7 +61,7 @@ const GenerateBill = () => {
         throw new Error("No token found. Please log in again.");
       }
 
-      const response = await axios.get(`http://localhost:8000/api/stocks/view/${productName}`, {
+      const response = await axios.get(`https://bill-and-stock-management-application.onrender.com/api/stocks/view/${productName}`, {
         headers: {
           Authorization: `Bearer ${token}` // Attach token to request header
         }
@@ -87,7 +87,7 @@ const GenerateBill = () => {
         throw new Error("No token found. Please log in again.");
       }
 
-      const response = await axios.get("http://localhost:8000/api/stocks/view-stocks", {
+      const response = await axios.get("https://bill-and-stock-management-application.onrender.com/api/stocks/view-stocks", {
         headers: {
           Authorization: `Bearer ${token}`, // Attach token to request header
         },
@@ -220,7 +220,7 @@ const GenerateBill = () => {
     }
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/bills/generate-bill",
+        "https://bill-and-stock-management-application.onrender.com/api/bills/generate-bill",
         {
           customerName,
           customerContact,
