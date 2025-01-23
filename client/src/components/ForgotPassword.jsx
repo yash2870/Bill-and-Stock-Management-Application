@@ -13,7 +13,7 @@ const ForgotPassword = () => {
         setIsLoading(true);
 
         try {
-            const response = await axios.post('http://localhost:8000/api/forgotpassword/forgot-password', { email });
+            const response = await axios.post('https://bill-and-stock-management-application.onrender.com/api/forgotpassword/forgot-password', { email });
 
             // Check if response contains a success message
             if (response.data.message === 'If your email exists, you will receive a password reset link.') {
