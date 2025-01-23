@@ -47,7 +47,7 @@ const ResetPassword = () => {
 
         try {
             // Send the request to reset the password
-            await axios.post(`http://localhost:8000/api/resetpassword/reset-password/${token}`, {
+            await axios.post(`https://bill-and-stock-management-application.onrender.com/api/resetpassword/reset-password/${token}`, {
                 password: newPassword, // Corrected key for backend
             });
             toast.success('Password reset successful!');
