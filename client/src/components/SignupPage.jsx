@@ -48,7 +48,7 @@ const SignupPage = () => {
         }
 
         try {
-            const response = await axios.post('http://localhost:8000/api/auth/signup', {
+            const response = await axios.post('https://bill-and-stock-management-application.onrender.com/api/auth/signup', {
                 email,
                 password,
                 businessName,
