@@ -39,7 +39,7 @@ router.post('/forgot-password', async (req, res) => {
         });
 
         // Create the password reset link
-        const resetLink = `http://localhost:5173/reset-password/${token}`; // Adjust for your frontend URL
+        const resetLink = `https://bill-sahayak.onrender.com/reset-password/${token}`; // Adjust for your frontend URL
         const mailOptions = {
             from: process.env.EMAIL,
             to: user.email,
