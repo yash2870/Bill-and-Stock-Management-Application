@@ -35,7 +35,7 @@ const HomePage = () => {
     // Fetch stock items independently
     const fetchStocks = async () => {
         try {
-            const response = await axios.get('http://localhost:8000/api/stocks/view', {
+            const response = await axios.get('https://bill-and-stock-management-application.onrender.com/api/stocks/view', {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setStockItems(response.data.stocks);
@@ -48,7 +48,7 @@ const HomePage = () => {
     const handleAddItem = async () => {
         try {
             const response = await axios.post(
-                'http://localhost:8000/api/stocks/add',
+                'https://bill-and-stock-management-application.onrender.com/api/stocks/add',
                 { productName, quantity, price },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -89,7 +89,7 @@ const HomePage = () => {
     const handleEditItem = async () => {
         try {
             const response = await axios.put(
-                `http://localhost:8000/api/stocks/update/${editingStock._id}`,
+                `https://bill-and-stock-management-application.onrender.com/api/stocks/update/${editingStock._id}`,
                 {
                     productName: editingStock.productName,
                     quantity: editingStock.quantity,
@@ -102,7 +102,7 @@ const HomePage = () => {
 
             if (updatedStock.quantity === 0) {
                 // Delete the stock item if quantity is 0
-                await axios.delete(`http://localhost:8000/api/stocks/delete/${editingStock._id}`, {
+                await axios.delete(`https://bill-and-stock-management-application.onrender.com/api/stocks/delete/${editingStock._id}`, {
                     headers: { Authorization: `Bearer ${token}` },
                 });
                 setStockItems(stockItems.filter((item) => item._id !== editingStock._id));
@@ -126,7 +126,7 @@ const HomePage = () => {
         if (!itemToDelete) return;
 
         try {
-            await axios.delete(`http://localhost:8000/api/stocks/delete/${itemToDelete._id}`, {
+            await axios.delete(`https://bill-and-stock-management-application.onrender.com/api/stocks/delete/${itemToDelete._id}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setStockItems(stockItems.filter((item) => item._id !== itemToDelete._id));
