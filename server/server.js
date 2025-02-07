@@ -23,7 +23,7 @@ app.use(cors({
     credentials: true,
 }));
 app.use(bodyParser.json());
-
+app.use(express.static(path.join(__dirname, 'build')));
 // Database connection
 connectDB();
 
@@ -34,6 +34,9 @@ app.use('/api/stocks', stockRoutes);
 app.use('/api/bills',billRoutes)
 app.use('/api/forgotpassword',forgotPasswordRoutes)
 app.use('/api/resetpassword',resetPasswordRoute)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 
 // app.post('/forgot-password', (req, res) => {
