@@ -11,7 +11,7 @@ const stockRoutes = require('./routes/stocks');
 const billRoutes=require('./routes/bills')
 const forgotPasswordRoutes = require('./routes/forgotpassword');
 const resetPasswordRoute=require('./routes/resetpassword')
-
+const path = require('path');
 
 dotenv.config();
 
